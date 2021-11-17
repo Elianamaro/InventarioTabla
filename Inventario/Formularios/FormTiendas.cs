@@ -17,7 +17,7 @@ namespace Inventario.Formularios
     public partial class FormTiendas : Form
     {
         private SoloNumeros sn = new SoloNumeros();
-        private Registro_TiendasEntities2 db = new Registro_TiendasEntities2();
+        private Registro_TiendasEntities3 db = new Registro_TiendasEntities3();
         int idTienda = 0;
         public FormTiendas()
         {
@@ -140,10 +140,9 @@ namespace Inventario.Formularios
             idTienda = int.Parse(DGVTiendas.CurrentRow.Cells[0].Value.ToString());
             txtTienda.Text = DGVTiendas.CurrentRow.Cells[1].Value.ToString();
             txtUbicacion.Text = DGVTiendas.CurrentRow.Cells[2].Value.ToString();
-            txtFono.Text = DGVTiendas.CurrentRow.Cells[3].Value.ToString();
-            cbEncargado.SelectedValue = int.Parse(DGVTiendas.CurrentRow.Cells[4].Value.ToString());
+            cbEncargado.SelectedValue = int.Parse(DGVTiendas.CurrentRow.Cells[3].Value.ToString());
+            txtFono.Text = DGVTiendas.CurrentRow.Cells[4].Value.ToString();
             txtCorreo.Text = DGVTiendas.CurrentRow.Cells[5].Value.ToString();
-            
 
             btnEliminar.Enabled = true;
         }

@@ -14,8 +14,8 @@ namespace Inventario.Formularios
     public partial class FormProductos : Form
     {
         private SoloNumeros sn = new SoloNumeros();
-        
-        private Registro_TiendasEntities2 db = new Registro_TiendasEntities2();
+
+        private Registro_TiendasEntities3 db = new Registro_TiendasEntities3();
         int id_producto = 0;
         public FormProductos()
         {
@@ -252,7 +252,6 @@ namespace Inventario.Formularios
         {
             id_producto = int.Parse(dgvProductos.CurrentRow.Cells[0].Value.ToString());
             cbTienda.SelectedValue = int.Parse(dgvProductos.CurrentRow.Cells[1].Value.ToString());
-
             cbMarcas.SelectedValue = int.Parse(dgvProductos.CurrentRow.Cells[2].Value.ToString());
             cbCategorias.SelectedValue = int.Parse(dgvProductos.CurrentRow.Cells[3].Value.ToString());
             txtCodigo.Text = dgvProductos.CurrentRow.Cells[4].Value.ToString();

@@ -13,7 +13,7 @@ namespace Inventario.Formularios
 {
     public partial class FormCategorias : Form
     {
-        private Registro_TiendasEntities2 db = new Registro_TiendasEntities2();
+        private Registro_TiendasEntities3 db = new Registro_TiendasEntities3();
         int id_categoria = 0;
         public FormCategorias()
         {

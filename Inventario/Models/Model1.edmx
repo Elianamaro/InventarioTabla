@@ -21,6 +21,9 @@
           <Property Name="apellido" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="telefono" Type="int" Nullable="false" />
           <Property Name="rut" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="correo" Type="varchar" MaxLength="60" />
+          <Property Name="contraseña" Type="varchar" MaxLength="25" />
+          <Property Name="id_rol" Type="int" />
         </EntityType>
         <EntityType Name="Marca">
           <Key>
@@ -44,6 +47,13 @@
           <Property Name="id_categoria" Type="int" Nullable="false" />
           <Property Name="fecha_recepcion" Type="date" Nullable="false" />
         </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="id_rol" />
+          </Key>
+          <Property Name="id_rol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_rol" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Tienda">
           <Key>
             <PropertyRef Name="id_tienda" />
@@ -55,6 +65,18 @@
           <Property Name="correo" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="id_encargado" Type="int" />
         </EntityType>
+        <Association Name="FK_Encargado_Rol">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
+          <End Role="Encargado" Type="Self.Encargado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="id_rol" />
+            </Principal>
+            <Dependent Role="Encargado">
+              <PropertyRef Name="id_rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Producto_Categorias">
           <End Role="Categorias" Type="Self.Categorias" Multiplicity="1" />
           <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
@@ -108,7 +130,12 @@
           <EntitySet Name="Encargado" EntityType="Self.Encargado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Marca" EntityType="Self.Marca" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tienda" EntityType="Self.Tienda" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Encargado_Rol" Association="Self.FK_Encargado_Rol">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Encargado" EntitySet="Encargado" />
+          </AssociationSet>
           <AssociationSet Name="FK_Producto_Categorias" Association="Self.FK_Producto_Categorias">
             <End Role="Categorias" EntitySet="Categorias" />
             <End Role="Producto" EntitySet="Producto" />
@@ -148,6 +175,10 @@
           <Property Name="apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="telefono" Type="Int32" Nullable="false" />
           <Property Name="rut" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="correo" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="contraseña" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="id_rol" Type="Int32" />
+          <NavigationProperty Name="Rol" Relationship="Self.FK_Encargado_Rol" FromRole="Encargado" ToRole="Rol" />
           <NavigationProperty Name="Tienda" Relationship="Self.FK_Tienda_Encargado" FromRole="Encargado" ToRole="Tienda" />
         </EntityType>
         <EntityType Name="Marca">
@@ -176,6 +207,14 @@
           <NavigationProperty Name="Marca" Relationship="Self.FK_Producto_Marca" FromRole="Producto" ToRole="Marca" />
           <NavigationProperty Name="Tienda" Relationship="Self.FK_Producto_Tienda1" FromRole="Producto" ToRole="Tienda" />
         </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="id_rol" />
+          </Key>
+          <Property Name="id_rol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_rol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Encargado" Relationship="Self.FK_Encargado_Rol" FromRole="Rol" ToRole="Encargado" />
+        </EntityType>
         <EntityType Name="Tienda">
           <Key>
             <PropertyRef Name="id_tienda" />
@@ -198,6 +237,18 @@
             </Principal>
             <Dependent Role="Producto">
               <PropertyRef Name="id_categoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Encargado_Rol">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
+          <End Role="Encargado" Type="Self.Encargado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="id_rol" />
+            </Principal>
+            <Dependent Role="Encargado">
+              <PropertyRef Name="id_rol" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -237,15 +288,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Registro_TiendasEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Registro_TiendasEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categorias" EntityType="Self.Categorias" />
           <EntitySet Name="Encargado" EntityType="Self.Encargado" />
           <EntitySet Name="Marca" EntityType="Self.Marca" />
           <EntitySet Name="Producto" EntityType="Self.Producto" />
+          <EntitySet Name="Rol" EntityType="Self.Rol" />
           <EntitySet Name="Tienda" EntityType="Self.Tienda" />
           <AssociationSet Name="FK_Producto_Categorias" Association="Self.FK_Producto_Categorias">
             <End Role="Categorias" EntitySet="Categorias" />
             <End Role="Producto" EntitySet="Producto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Encargado_Rol" Association="Self.FK_Encargado_Rol">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Encargado" EntitySet="Encargado" />
           </AssociationSet>
           <AssociationSet Name="FK_Tienda_Encargado" Association="Self.FK_Tienda_Encargado">
             <End Role="Encargado" EntitySet="Encargado" />
@@ -265,7 +321,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Registro_TiendasModelStoreContainer" CdmEntityContainer="Registro_TiendasEntities2">
+        <EntityContainerMapping StorageEntityContainer="Registro_TiendasModelStoreContainer" CdmEntityContainer="Registro_TiendasEntities3">
           <EntitySetMapping Name="Categorias">
             <EntityTypeMapping TypeName="Registro_TiendasModel.Categorias">
               <MappingFragment StoreEntitySet="Categorias">
@@ -282,6 +338,9 @@
                 <ScalarProperty Name="apellido" ColumnName="apellido" />
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
                 <ScalarProperty Name="rut" ColumnName="rut" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+                <ScalarProperty Name="id_rol" ColumnName="id_rol" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -306,6 +365,14 @@
                 <ScalarProperty Name="id_tienda" ColumnName="id_tienda" />
                 <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
                 <ScalarProperty Name="fecha_recepcion" ColumnName="fecha_recepcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rol">
+            <EntityTypeMapping TypeName="Registro_TiendasModel.Rol">
+              <MappingFragment StoreEntitySet="Rol">
+                <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+                <ScalarProperty Name="nombre_rol" ColumnName="nombre_rol" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

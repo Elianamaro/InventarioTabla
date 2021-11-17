@@ -14,7 +14,7 @@ namespace Inventario.Formularios
 {
     public partial class FormMarcas : Form
     {
-        private Registro_TiendasEntities2 db = new Registro_TiendasEntities2();
+        private Registro_TiendasEntities3 db = new Registro_TiendasEntities3();
         int idMarca = 0;
         public FormMarcas()
         {
@@ -161,7 +161,6 @@ namespace Inventario.Formularios
 
         private void FormMarcas_Load(object sender, EventArgs e)
         {
-
             this.rvMarcas.RefreshReport();
         }
     }

@@ -13,10 +13,10 @@ namespace Inventario.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Registro_TiendasEntities2 : DbContext
+    public partial class Registro_TiendasEntities3 : DbContext
     {
-        public Registro_TiendasEntities2()
-            : base("name=Registro_TiendasEntities2")
+        public Registro_TiendasEntities3()
+            : base("name=Registro_TiendasEntities3")
         {
         }
     
@@ -29,6 +29,7 @@ namespace Inventario.Models
         public virtual DbSet<Encargado> Encargado { get; set; }
         public virtual DbSet<Marca> Marca { get; set; }
         public virtual DbSet<Producto> Producto { get; set; }
+        public virtual DbSet<Rol> Rol { get; set; }
         public virtual DbSet<Tienda> Tienda { get; set; }
     }
 }

@@ -25,7 +25,11 @@ namespace Inventario.Models
         public string apellido { get; set; }
         public int telefono { get; set; }
         public string rut { get; set; }
+        public string correo { get; set; }
+        public string contraseña { get; set; }
+        public Nullable<int> id_rol { get; set; }
     
+        public virtual Rol Rol { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tienda> Tienda { get; set; }
     }

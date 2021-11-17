@@ -42,6 +42,12 @@ namespace Inventario.Formularios
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_Correo = new System.Windows.Forms.TextBox();
+            this.txt_Password = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cb_Cargo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEncargados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +64,7 @@ namespace Inventario.Formularios
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 119);
+            this.label2.Location = new System.Drawing.Point(13, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 1;
@@ -67,7 +73,7 @@ namespace Inventario.Formularios
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 168);
+            this.label3.Location = new System.Drawing.Point(13, 156);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 2;
@@ -76,7 +82,7 @@ namespace Inventario.Formularios
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 266);
+            this.label4.Location = new System.Drawing.Point(13, 254);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(24, 13);
             this.label4.TabIndex = 4;
@@ -85,7 +91,7 @@ namespace Inventario.Formularios
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 217);
+            this.label5.Location = new System.Drawing.Point(13, 205);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 3;
@@ -93,21 +99,21 @@ namespace Inventario.Formularios
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(88, 119);
+            this.txtNombre.Location = new System.Drawing.Point(86, 107);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(222, 20);
             this.txtNombre.TabIndex = 5;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(88, 165);
+            this.txtApellido.Location = new System.Drawing.Point(86, 153);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(222, 20);
             this.txtApellido.TabIndex = 6;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(88, 214);
+            this.txtTelefono.Location = new System.Drawing.Point(86, 202);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(222, 20);
             this.txtTelefono.TabIndex = 7;
@@ -115,7 +121,7 @@ namespace Inventario.Formularios
             // 
             // txtRut
             // 
-            this.txtRut.Location = new System.Drawing.Point(88, 266);
+            this.txtRut.Location = new System.Drawing.Point(86, 254);
             this.txtRut.Name = "txtRut";
             this.txtRut.Size = new System.Drawing.Size(222, 20);
             this.txtRut.TabIndex = 8;
@@ -166,12 +172,68 @@ namespace Inventario.Formularios
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(13, 350);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(61, 13);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Contraseña";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(13, 301);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Correo";
+            // 
+            // txt_Correo
+            // 
+            this.txt_Correo.Location = new System.Drawing.Point(86, 301);
+            this.txt_Correo.Name = "txt_Correo";
+            this.txt_Correo.Size = new System.Drawing.Size(222, 20);
+            this.txt_Correo.TabIndex = 15;
+            this.txt_Correo.Leave += new System.EventHandler(this.txt_Correo_Leave);
+            // 
+            // txt_Password
+            // 
+            this.txt_Password.Location = new System.Drawing.Point(86, 347);
+            this.txt_Password.Name = "txt_Password";
+            this.txt_Password.Size = new System.Drawing.Size(222, 20);
+            this.txt_Password.TabIndex = 16;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(13, 73);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Cargo";
+            // 
+            // cb_Cargo
+            // 
+            this.cb_Cargo.FormattingEnabled = true;
+            this.cb_Cargo.Location = new System.Drawing.Point(86, 73);
+            this.cb_Cargo.Name = "cb_Cargo";
+            this.cb_Cargo.Size = new System.Drawing.Size(222, 21);
+            this.cb_Cargo.TabIndex = 18;
+            // 
             // FormEncargado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(960, 391);
+            this.Controls.Add(this.cb_Cargo);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txt_Password);
+            this.Controls.Add(this.txt_Correo);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnGuardar);
@@ -208,5 +270,11 @@ namespace Inventario.Formularios
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txt_Correo;
+        private System.Windows.Forms.TextBox txt_Password;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cb_Cargo;
     }
 }

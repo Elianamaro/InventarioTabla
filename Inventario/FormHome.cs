@@ -67,5 +67,20 @@ namespace Inventario
         {
             abrirFormulario(new Formularios.FormEncargado());
         }
+
+        private void btn_reportEncargado_Click(object sender, EventArgs e)
+        {
+            abrirFormulario(new Formularios.FormInformeEncargado());
+        }
+
+        private void btn_reportTiendas_Click(object sender, EventArgs e)
+        {
+            abrirFormulario(new Formularios.FormInformeTiendas());
+        }
+
+        private void btn_reportProductos_Click(object sender, EventArgs e)
+        {
+            abrirFormulario(new Formularios.FormInformeProductos());
+        }
     }
 }

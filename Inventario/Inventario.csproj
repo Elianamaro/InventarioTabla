@@ -83,6 +83,12 @@
     <Compile Include="FormHome.Designer.cs">
       <DependentUpon>FormHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,24 @@
     </Compile>
     <Compile Include="Formularios\FormEncargado.Designer.cs">
       <DependentUpon>FormEncargado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormInformeEncargado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormInformeEncargado.Designer.cs">
+      <DependentUpon>FormInformeEncargado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormInformeProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormInformeProductos.Designer.cs">
+      <DependentUpon>FormInformeProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormInformeTiendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormInformeTiendas.Designer.cs">
+      <DependentUpon>FormInformeTiendas.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FormMarcas.cs">
       <SubType>Form</SubType>
@@ -140,6 +164,9 @@
     <Compile Include="Models\Producto.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Rol.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Tienda.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -151,11 +178,23 @@
     <EmbeddedResource Include="FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormCategorias.resx">
       <DependentUpon>FormCategorias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormEncargado.resx">
       <DependentUpon>FormEncargado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormInformeEncargado.resx">
+      <DependentUpon>FormInformeEncargado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormInformeProductos.resx">
+      <DependentUpon>FormInformeProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormInformeTiendas.resx">
+      <DependentUpon>FormInformeTiendas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormMarcas.resx">
       <DependentUpon>FormMarcas.cs</DependentUpon>
@@ -175,7 +214,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\Encargados.rdlc" />
     <EmbeddedResource Include="Reports\Marca.rdlc" />
+    <EmbeddedResource Include="Reports\Tiendas.rdlc" />
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
